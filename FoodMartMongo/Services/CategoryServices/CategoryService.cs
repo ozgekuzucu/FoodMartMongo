@@ -30,20 +30,22 @@ namespace FoodMartMongo.Services.CategoryServices
 			await _categoryCollection.DeleteOneAsync(id);
 		}
 
-		public Task<List<ResultCategoryDto>> GetAllCategoryAsync()
+		public async Task<List<ResultCategoryDto>> GetAllCategoryAsync()
 		{
-			throw new NotImplementedException();
+			var values = await _categoryCollection.Find(x => true).ToListAsync();
+			return _mapper.Map<List<ResultCategoryDto>>(values);
 		}
 
-		public Task<GetCategoryByIdDto> GetCategoryByIdAsync(string id)
+		public async Task<GetCategoryByIdDto> GetCategoryByIdAsync(string id)
 		{
-			throw new NotImplementedException();
+			var value = await _categoryCollection.Find(x => x.CategoryId == id).FirstOrDefaultAsync();
+			return _mapper.Map<GetCategoryByIdDto>(value);
 		}
 
 		public async Task UpdateCategoryAsync(UpdateCategoryDto updateCategoryDto)
 		{
 			var values = _mapper.Map<Category>(updateCategoryDto);
-			await _categoryCollection.FindOneAndReplaceAsync(x=>x.CategoryId ==updateCategoryDto.CategoryId, values);
+			await _categoryCollection.FindOneAndReplaceAsync(x => x.CategoryId == updateCategoryDto.CategoryId, values);
 		}
 	}
 }
