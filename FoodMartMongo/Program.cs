@@ -1,5 +1,7 @@
 using FoodMartMongo.Services.CategoryServices;
 using FoodMartMongo.Services.CustomerServices;
+using FoodMartMongo.Services.DiscountServices;
+using FoodMartMongo.Services.FeatureServices;
 using FoodMartMongo.Services.ProductServices;
 using FoodMartMongo.Settings;
 using Microsoft.Extensions.Options;
@@ -10,6 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IFeatureService, FeatureService>();
+builder.Services.AddScoped<IDiscountService, DiscountService>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

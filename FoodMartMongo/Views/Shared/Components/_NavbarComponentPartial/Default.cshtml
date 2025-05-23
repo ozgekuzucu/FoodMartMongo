@@ -143,3 +143,12 @@
         </div>
     </div>
 </header>
+
+<script>
+    document.querySelector('.filter-categories').addEventListener('change', function () {
+        const value = this.value;
+        if (value) {
+            document.querySelector(value).scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>

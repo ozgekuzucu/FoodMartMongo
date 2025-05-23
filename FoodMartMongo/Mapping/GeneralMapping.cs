@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using FoodMartMongo.Dtos.CategoryDtos;
 using FoodMartMongo.Dtos.CustomerDtos;
+using FoodMartMongo.Dtos.DiscountDtos;
+using FoodMartMongo.Dtos.FeatureDtos;
 using FoodMartMongo.Dtos.ProductDtos;
 using FoodMartMongo.Entities;
 
@@ -24,6 +26,16 @@ namespace FoodMartMongo.Mapping
 			CreateMap<Customer, CreateCustomerDto>().ReverseMap();
 			CreateMap<Customer, UpdateCustomerDto>().ReverseMap();
 			CreateMap<Customer, GetCustomerByIdDto>().ReverseMap();
+
+			CreateMap<Feature, ResultFeatureDto>().ReverseMap();
+			CreateMap<Feature, CreateFeatureDto>().ReverseMap();
+			CreateMap<Feature, UpdateFeatureDto>().ReverseMap();
+			CreateMap<Feature, GetFeatureByIdDto>().ReverseMap();
+
+			CreateMap<Discount, ResultDiscountDto>().ReverseMap();
+			CreateMap<Discount, CreateDiscountDto>().ReverseMap();
+			CreateMap<Discount, UpdateDiscountDto>().ReverseMap();
+			CreateMap<Discount, GetDiscountByIdDto>().ReverseMap();
 		}
 	}
 }

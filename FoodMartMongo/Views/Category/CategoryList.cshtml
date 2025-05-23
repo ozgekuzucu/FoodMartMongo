@@ -14,6 +14,7 @@
                     <tr>
                         <th>#</th>
                         <th>Kategori Adı</th>
+                        <th>Kategori İkon</th>
                         <th>Güncelle</th>
                         <th>Sil</th>
                     </tr>
@@ -24,6 +25,7 @@
                         <tr>
                             <td>@item.CategoryId</td>
                             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.CategoryName</strong></td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>@item.IconUrl</td>
                             <td>
                                 <a class="btn btn-outline-success" href="/Category/UpdateCategory/@item.CategoryId"><i class="bx bx-edit-alt me-1"></i> Güncelle</a>
                             </td>

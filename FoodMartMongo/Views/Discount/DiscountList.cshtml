@@ -1,0 +1,48 @@
+﻿@model List<FoodMartMongo.Dtos.DiscountDtos.ResultDiscountDto>
+@{
+    ViewData["Title"] = "DiscountList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+    <div class="card">
+        <h5 class="card-header">Table Basic</h5>
+        <div class="table-responsive text-nowrap">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Alt Başlık</th>
+                        <th>İndirim Oranı</th>
+                        <th>Görsel Url</th>
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+                    </tr>
+                </thead>
+                <tbody class="table-border-bottom-0">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.DiscountId</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>@item.Title</strong></td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>@item.SubTitle</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>@item.DiscountRate</td>
+                            <td><i class="fab fa-angular fa-lg text-danger me-3"></i>@item.ImageUrl</td>
+                            <td>
+                                <a class="btn btn-outline-success" href="/Discount/UpdateDiscount/@item.DiscountId"><i class="bx bx-edit-alt me-1"></i> Güncelle</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-danger" href="/Discount/DeleteDiscount/@item.DiscountId"><i class="bx bx-trash me-1"></i> Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <br />
+    <a href="/Discount/CreateDiscount/" class="btn btn-primary">Yeni İndirim Girişi</a>
+</div>

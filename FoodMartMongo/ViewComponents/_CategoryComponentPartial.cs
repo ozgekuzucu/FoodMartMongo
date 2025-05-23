@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FoodMartMongo.Services.CategoryServices;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FoodMartMongo.ViewComponents
 {
 	public class _CategoryComponentPartial : ViewComponent
 	{
-		public IViewComponentResult Invoke()
+		private readonly ICategoryService _categoryService;
+
+		public _CategoryComponentPartial(ICategoryService categoryService)
 		{
-			return View();
+			_categoryService = categoryService;
+		}
+
+		public async Task<IViewComponentResult> InvokeAsync()
+		{
+			var values = await _categoryService.GetAllCategoryAsync();
+			return View(values);
 		}
 	}
 }
