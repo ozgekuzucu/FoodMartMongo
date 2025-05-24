@@ -13,6 +13,11 @@ namespace FoodMartMongo.Entities
 		public string ImageUrl { get; set; }
 		public bool Status { get; set; }
 		public int StockCount { get; set; }
+
+		[BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
 		public string CategoryId { get; set; }
+
+		[BsonIgnore]
+		public Category Category { get; set; }
 	}
 }

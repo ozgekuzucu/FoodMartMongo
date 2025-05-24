@@ -17,6 +17,7 @@ builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IPeopleViewingService, PeopleViewingService>();
 
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("DatabaseSettingsKey"));

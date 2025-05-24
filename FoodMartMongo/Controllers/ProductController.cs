@@ -19,7 +19,7 @@ namespace FoodMartMongo.Controllers
 
 		public async Task<IActionResult> ProductList()
 		{
-			var values = await _productService.GetAllProductsAsync();
+			var values = await _productService.GetAllProductWithCategoryAsync();
 			return View(values);
 		}
 
