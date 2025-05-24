@@ -15,8 +15,15 @@ namespace FoodMartMongo.ViewComponents
 
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
-			var values = await _discountService.GetAllDiscountAsync();
-			return View(values);
+			var allDiscounts = await _discountService.GetAllDiscountAsync();
+
+			// İlk 2 veriyi al
+			var subDiscounts = allDiscounts
+				.OrderBy(x => x.DiscountId) 
+				.Take(2)
+				.ToList();
+
+			return View(subDiscounts);
 		}
 	}
 }

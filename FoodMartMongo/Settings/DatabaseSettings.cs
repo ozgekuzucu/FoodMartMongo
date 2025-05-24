@@ -9,5 +9,6 @@
 		public string CustomerCollectionName { get; set; }
 		public string FeatureCollectionName { get; set; }
 		public string DiscountCollectionName { get; set; }
+		public string PeopleViewingCollectionName { get; set; }
 	}
 }

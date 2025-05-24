@@ -3,6 +3,7 @@ using FoodMartMongo.Dtos.CategoryDtos;
 using FoodMartMongo.Dtos.CustomerDtos;
 using FoodMartMongo.Dtos.DiscountDtos;
 using FoodMartMongo.Dtos.FeatureDtos;
+using FoodMartMongo.Dtos.PeopleViewingDtos;
 using FoodMartMongo.Dtos.ProductDtos;
 using FoodMartMongo.Entities;
 
@@ -36,6 +37,11 @@ namespace FoodMartMongo.Mapping
 			CreateMap<Discount, CreateDiscountDto>().ReverseMap();
 			CreateMap<Discount, UpdateDiscountDto>().ReverseMap();
 			CreateMap<Discount, GetDiscountByIdDto>().ReverseMap();
+
+			CreateMap<PeopleViewing, ResultPeopleViewingDto>().ReverseMap();
+			CreateMap<PeopleViewing, CreatePeopleViewingDto>().ReverseMap();
+			CreateMap<PeopleViewing, UpdatePeopleViewingDto>().ReverseMap();
+			CreateMap<PeopleViewing, GetPeopleViewingByIdDto>().ReverseMap();
 		}
 	}
 }
