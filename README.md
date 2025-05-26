@@ -1,4 +1,4 @@
-# 🛒 FoodMart Projesi
+# 🛒 FoodMart MongoDB Projesi
 
 FoodMart, **ASP.NET Core 8.0** ve **MongoDB** ile geliştirilmiş, dinamik bir e-ticaret platformudur.  
 Hem kullanıcı dostu bir web sitesi hem de yönetim için kapsamlı bir admin paneli içerir.
