@@ -10,5 +10,6 @@
 		public string FeatureCollectionName { get; set; }
 		public string DiscountCollectionName { get; set; }
 		public string PeopleViewingCollectionName { get; set; }
+		public string AdminCollectionName { get; set; }
 	}
 }

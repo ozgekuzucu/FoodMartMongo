@@ -1,3 +1,4 @@
+using FoodMartMongo.Services.AdminServices;
 using FoodMartMongo.Services.CategoryServices;
 using FoodMartMongo.Services.CustomerServices;
 using FoodMartMongo.Services.DiscountServices;
@@ -16,6 +17,8 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IFeatureService, FeatureService>();
 builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IPeopleViewingService, PeopleViewingService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
+
 
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -28,9 +31,10 @@ builder.Services.AddScoped<IDatabaseSettings>(sp =>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSession();
 
 var app = builder.Build();
-
+app.UseSession();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
